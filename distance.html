@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conversion</title>
+  </head>
+
+  <body>
+    <header>
+      <p>
+        distance conversion
+      </p>
+    </header>
+    <nav>
+      <ul>
+        <li id="menu">Menu</li>
+        <li><a href="project.html">home</a></li>
+        <li><a href="weight.html">weight</a></li>
+        <li><a href="volume.html">volume</a></li>
+      </ul>
+    </nav>
+    <p id="distance_info_inch">The inch (symbol: in or ″) is a unit of length in the British Imperial and the United States customary systems of measurement. It is equal to ⁠1/36⁠ yard or ⁠1/12⁠ of a foot. Derived from the Roman uncia ("twelfth"), the word inch is also sometimes used to translate similar units in other measurement systems, usually understood as deriving from the width of the human thumb.Standards for the exact length of an inch have varied in the past, but since the adoption of the international yard during the 1950s and 1960s the inch has been based on the metric system and defined as exactly 25.4 mm.</p>
+
+    <var id="out">
+      <button id="cm" onclick="changeinch()">cm</button><button id="inch" onclick="changecm()">inch</button>
+    <input type="number" id="distance_input" inputmode="numeric" onchange="change()"></var>
+    <label id="distance_label" for="distance_input">distance</label>
+    <p id="measures" ></p>
+    <p id="larger_measure"></p>
+
+    <script>
+      var x = 2.54;
+      var y = document.getElementById("distance_input").contains();
+      var z = 0
+
+      document.getElementById("measures").innerHTML = document.getElementById("measures").setAttribute("value", y * x);
+      function changecm() {
+        let y = document.getElementById("distance_input").value
+        document.getElementById("measures").innerHTML = y * x + " centimeter";
+        document.getElementById("distance_label").innerHTML = "inch";
+        z = 1
+      }
+      function changeinch() {
+        let y = document.getElementById("distance_input").value
+        document.getElementById("measures").innerHTML = y / x - (((y / x)*100%1)/100) + " inches";
+        document.getElementById("distance_label").innerHTML = "centimeter";
+        z = 2
+      }
+      function change() {
+        if (z == 1){
+          changecm()}
+        
+        if (z == 2) {changeinch()
+        }
+      }
+      </script>
+    <br>
+    <img src="https://media.tenor.com/kgfZWwB4OgEAAAAM/cat-thinker.gif" alt="cat" id="peak">
+  </body>
+
+
+
+</html>

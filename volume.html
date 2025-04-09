@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conversion</title>
+  </head>
+<!--0.264-->
+  <body>
+    <header>
+      <p>
+        volume test
+      </p>
+    </header>
+    <nav>
+      <ul>
+        <li id="menu">Menu</li>
+        <li><a href="distance.html">distance</a></li>
+        <li><a href="weight.html">weight</a></li>
+        <li><a href="project.html">home</a></li>
+      </ul>
+    </nav>
+
+    <var id="out">
+      <button id="inch" onclick="changeL()">L</button><button id="cm" onclick="changeGal()">Gal</button>
+    <input type="number" id="volume_input" inputmode="numeric" onchange="change()"></var>
+    <label id="volume_label" for="volume_input">volume</label>
+    <p id="measures" ></p>
+    <p id="larger_measure"></p>
+
+    <script>
+      var x = 0.264;
+      var y = document.getElementById("volume_input").contains();
+      var z = 0
+
+      document.getElementById("measures").innerHTML = document.getElementById("measures").setAttribute("value", y * x);
+      function changeGal() {
+        let y = document.getElementById("volume_input").value
+        document.getElementById("measures").innerHTML = y / x - ((y / x)%0.01) + " Litres";
+        document.getElementById("volume_label").innerHTML = "Gallons";
+        z = 1
+      }
+      function changeL() {
+        let y = document.getElementById("volume_input").value
+        document.getElementById("measures").innerHTML = y * x - ((y * x)%0.01) + " Gallons";
+        document.getElementById("volume_label").innerHTML = "Litres";
+        z = 2
+      }
+      function change() {
+        if (z == 1){
+          changeGal()}
+        
+        if (z == 2) {changeL()
+        }
+      }
+      </script>
+    <img src="https://media.tenor.com/kgfZWwB4OgEAAAAM/cat-thinker.gif" alt="cat" id="peak">
+  </body>
+
+
+</html>

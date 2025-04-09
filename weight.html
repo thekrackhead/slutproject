@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conversion</title>
+  </head>
+
+  <body>
+    <header>
+      <p>
+        weight conversion
+      </p>
+    </header>
+    <nav>
+      <ul>
+        <li id="menu">Menu</li>
+        <li><a href="distance.html">distance</a></li>
+        <li><a href="project.html">home</a></li>
+        <li><a href="volume.html">volume</a></li>
+      </ul>
+    </nav>
+    
+    <var id="out">
+      <button id="cm" onclick="changelbs()">kg</button><button id="inch" onclick="changekg()">lbs</button>
+    <input type="number" id="weight_input" inputmode="numeric" onchange="change()"></var>
+    <label id="weight_label" for="weight_input">weight</label>
+    <p id="measures" ></p>
+    <p id="larger_measure"></p>
+
+    <script>
+      var x = 2.204;
+      var y = document.getElementById("weight_input").contains();
+      var z = 0
+
+      document.getElementById("measures").innerHTML = document.getElementById("measures").setAttribute("value", y * x);
+      function changekg() {
+        let y = document.getElementById("weight_input").value
+        document.getElementById("measures").innerHTML = y / x - ((y / x)%0.01) + " kg";
+        document.getElementById("weight_label").innerHTML = "lbs";
+        z = 1
+      }
+      function changelbs() {
+        let y = document.getElementById("weight_input").value
+        document.getElementById("measures").innerHTML = y * x - ((y * x)%0.01) + " lbs";
+        document.getElementById("weight_label").innerHTML = "kilograms";
+        z = 2
+      }
+      function change() {
+        if (z == 1){
+          changekg()}
+        
+        if (z == 2) {changelbs()
+        }
+      }
+      </script>
+    <br>
+    <img src="https://media.tenor.com/kgfZWwB4OgEAAAAM/cat-thinker.gif" alt="cat" id="peak">
+  </body>
+    
+
+  
+</html>
