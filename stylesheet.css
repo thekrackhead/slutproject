@@ -106,11 +106,30 @@ nav ul:hover{
 }
 
 
-#distance_info_inch{
+#info_1{
+  padding: 0.75%;
   position: absolute;
-  right: 5vw;
+  right: 4.5vw;
   top: 8vh;
   width: 20vw;
+  height: 50vh;
+  outline-style:solid;
+  outline-color: black;
+  overflow-y: scroll;
+
+
+}
+
+#info_2{
+  padding: 0.75%;
+  position: absolute;
+  right: 26.5vw;
+  top: 20vh;
+  width: 20vw;
+  height: 50vh;
+  outline-style: solid;
+  outline-color: black;
+  overflow-y: scroll;
 }
 
 #mail{
